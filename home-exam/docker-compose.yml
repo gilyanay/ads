@@ -1,0 +1,18 @@
+version: '3'
+services:
+  ads:
+    build: ads
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./ads:/app/main
+    environment:
+      - FLASK_APP=main.py
+    networks:
+      - internalNetwork
+  redis:
+    image: "redis:alpine"
+
+networks:
+        internalNetwork:
+                external: false
