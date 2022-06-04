@@ -19,7 +19,7 @@ class AdsListResource(BaseResource):
         except ValueError as ve:
             return str(ve), 400
         except ConnectionError as ce:
-            return str(ce), 400
+            return str(ce), 501
         except Exception as e:
             return str(e), 501
         return ad, 200
