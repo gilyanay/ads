@@ -8,8 +8,6 @@ services:
       - ./ads:/app/main
     environment:
       - FLASK_APP=main.py
-    networks:
-      - internalNetwork
   redis:
     image: "redis:alpine"
 
